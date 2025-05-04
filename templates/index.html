@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Project Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+            background:linear-gradient(to right, #83a4d4, #b6fbff) ;
+            margin: 0;
+        }
+        .container {
+            display: inline-block;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 90%;
+        }
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+        input[type="text"],
+        input[type="file"],
+        input[type="color"],
+        select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #555;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: green;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: darkgreen;
+        }
+        .site-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="site-title">🌐 Smart Project Generator</div>
+
+    <div class="container">
+        <h1>📊 Auto Project Presentation Maker</h1>
+        <form action="/generate" method="post" enctype="multipart/form-data">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="text" name="roll" placeholder="Roll Number" required>
+            <input type="text" name="teacher" placeholder="Teacher's Name" required>
+            <input type="text" name="topic" placeholder="Topic (or type 'random')" required>
+
+            <label for="num_slides">Number of Slides</label>
+            <select name="num_slides" required>
+                <option value="3">3 Slides</option>
+                <option value="5">5 Slides</option>
+                <option value="7">7 Slides</option>
+                <option value="10">10 Slides</option>
+            </select>
+
+            <label for="font">Select Font</label>
+            <select name="font">
+                <option value="Arial">Arial</option>
+                <option value="Calibri">Calibri</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+            </select>
+
+            <label for="theme_color">Theme Color</label>
+            <input type="color" name="theme_color" value="#28a745">
+
+            <label for="theme">Theme</label>
+            <select name="theme">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="professional">Professional</option>
+                <option value="colorful">Colorful</option>
+            </select>
+
+            <label for="logo">Upload Logo (optional)</label>
+            <input type="file" name="logo" accept="image/*">
+
+            <button type="submit">Generate Presentation</button>
+        </form>
+    </div>
+
+</body>
+</html>
