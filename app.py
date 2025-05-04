@@ -302,9 +302,7 @@ def add_background_image(slide, image_path, prs):
 def home():
     return render_template('index.html')
 
-if __name__ == "__main__":  # This is your if statement
-    port = int(os.environ.get("PORT", 5000))  # This line is indented to be part of the if block
-    app.run(host="0.0.0.0", port=port)  # This line is also indented to be part of the if block
+
 
 @app.route('/generate', methods=['POST'])
 def generate():
@@ -417,7 +415,9 @@ def generate():
         mimetype='application/vnd.openxmlformats-officedocument.presentationml.presentation'
     )
 
-if __name__ == '__main__':
+if __name__ == "__main__":  # This is your if statement
+    port = int(os.environ.get("PORT", 5000))  # This line is indented to be part of the if block
+    app.run(host="0.0.0.0", port=port)  # This line is also indented to be part of the if block
     app.run(debug=True)
 
 
